@@ -1,0 +1,57 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+.navbar-nav li:nth-last-of-type(n+2) {
+  display: none;
+}
+
+.nav-item input {
+  background: none;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+}
+
+.nav-item .nav-link:nth-child(-n+3){
+  color: white !important;
+}
+
+.upload {
+  padding-top: 25px;
+}
+
+.upload form {
+  display: none;
+}
+
+.upload-youtube {
+  display: none;
+  padding-top: 50px;
+}
+
+.upload-youtube .form-group {
+  border-bottom: 1px solid #a79a9a;
+}
+
+.dropdown-menu {
+  height: 0;
+  overflow: hidden;
+  
+}
+
+.show {
+  height: 140px;
+  /* transition: height 1s ease-out; */
+  transition: all 1s ease-out;
+}
+
+.video-element {
+  width: 250px;
+  display: none;
+}
+
+
+
