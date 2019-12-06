@@ -8,14 +8,14 @@ Currently the application uplodas photos to the server and additionally uploads 
 
 Before you begin, ensure you have met the following requirements:
 
-* You have installed the latest version of `<npm>`
+* You have installed the latest version of `npm`
 
 ## Installing <Streambed Upload>
 
 To install <Streambed Upload>, follow these steps:
 
 ```
-<npm install>
+npm install
 ```
 
 ## Using <Streambed Upload>
@@ -23,7 +23,7 @@ To install <Streambed Upload>, follow these steps:
 To use <Streambed Upload>, follow these steps:
 
 ```
-<npm start>
+npm start
 ```
 
 Run app in the development mode. Open http://localhost:5000 to view it in the browser.
