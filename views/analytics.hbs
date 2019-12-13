@@ -1,2 +1,17 @@
 {{>nav}}
-<p>{{hey}}</p>
+<section class="analytics">
+ <ul class="collection">
+
+    <li class="collection-item">Title: {{channel_snippet_title}}</li>
+    <li class="collection-item">ID: {{channel_id}}</li>
+    <li class="collection-item">Subscribers: {{
+        channel_statistics_subscriberCount
+    }}</li>
+    <li class="collection-item">Views: {{
+        channel_statistics_viewCount
+    }}</li>
+    <li class="collection-item">Videos: {{
+        channel_statistics_videoCount
+    }}</li>
+ </ul>
+ </section>

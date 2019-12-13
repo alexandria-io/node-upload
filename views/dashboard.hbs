@@ -18,7 +18,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Upload</button>
             </form>
-            <p>{{msg}}</p>
+            
         </section>
         <section style="display: {{upload_youtube_show}}" class="upload-youtube">
             <form action="/upload-youtube" method="POST" enctype="multipart/form-data">
@@ -30,6 +30,6 @@
         </section>
         <video class="video-element" style="display: {{display_video}}" controls>
             <source src="uploads/{{videoSRC}}" type="video/mp4">
-            {{!-- <source src="uploads/myVideo-1575595781159.mp4" type="video/mp4"> --}}
         </video>
+        <p>{{msg}}</p>
     </div>

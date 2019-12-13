@@ -35,7 +35,7 @@ let upload = multer({
 }).single('myVideo');
 
 
-/* GET home page. */
+/* GET login page. */
 router.get('/', function (req, res, next) {
     const fileName = process.argv[2];
     res.render('index', { title: 'Youtube'})
@@ -43,11 +43,25 @@ router.get('/', function (req, res, next) {
 
 /* GET analytics page. */
 router.get('/analytics', function (req, res, next) {
-    analytics.runVideoAnalytics().then(() => {
-        res.render('analytics', { display: "block", nav_items_show: "block" })
+    analytics.runVideoAnalytics().then((data) => {
+       console.log( 'the result: ', data)
+        res.render('analytics', { 
+            display: "block",
+            nav_items_show: "block",
+            channel_snippet_title: data.snippet.title,
+            channel_id: data.id,
+            channel_statistics_subscriberCount: data.statistics.subscriberCount,
+            channel_statistics_viewCount: data.statistics.viewCount,
+            channel_statistics_videoCount: data.statistics.videoCount
+        })
     }).catch(console.err)
-    
 })
+
+/* GET dashboard page. (main page) */
+router.get('/dashboard', function (req, res, next) {
+
+    res.render('dashboard', { title: 'Youtube', display: "block", nav_items_show: "block" })
+});
 
 /* After OAuth routes to the main page */
 router.post('/dashboard', (req, res) => {
@@ -93,9 +107,7 @@ router.post('/upload', (req, res) => {
 router.post('/upload-youtube', (req, res) => {
 
     console.log('file name: ',videoInfo.fileName)
-
     youtubeUpload.runUpload( videoInfo )
- 
     res.render('dashboard', { title: 'Youtube', display: "block", nav_items_show: "block", msg: "Uploaded", display_video: "block", videoSRC: videoInfo.fileName})
 })
 

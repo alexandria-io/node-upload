@@ -43,14 +43,29 @@ body {
 }
 
 .show {
-  height: 140px;
+  height: 165px;
   /* transition: height 1s ease-out; */
   transition: all 1s ease-out;
 }
 
 .video-element {
+  margin: 20px 0 0 0;
   width: 250px;
   display: none;
+}
+
+.analytics {
+  margin-top: 50px;
+}
+
+.collection {
+  width: 50%
+}
+
+.collection-item {
+  list-style: none;
+  border-bottom: 1px solid #cecece;
+  padding: 15px 0 2px 2px;
 }
 
 
