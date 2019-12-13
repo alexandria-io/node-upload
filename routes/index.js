@@ -71,6 +71,7 @@ router.get('/uploaded', (req, res) => {
 });
 
 
+<<<<<<< HEAD
 /* Sending data back to React componant for upload route */
 router.get('/upload', (req, res) => {
 
@@ -82,6 +83,8 @@ router.get('/upload', (req, res) => {
     // res.redirect('/upload/' + '?access_token='+accessToken)
 });
 
+=======
+>>>>>>> c5a7103edd3c4183c960dd7eff16bd0b1f70e124
 /* GET login page. */
 router.get('/', function (req, res, next) {
     const fileName = process.argv[2];
@@ -106,7 +109,12 @@ router.get('/analytics', function (req, res, next) {
 
 /* GET dashboard page. (main page) */
 router.get('/dashboard', function (req, res, next) {
+<<<<<<< HEAD
     // res.render('dashboard', { title: 'Youtube', display: "block", nav_items_show: "block" })
+=======
+
+    res.render('dashboard', { title: 'Youtube', display: "block", nav_items_show: "block" })
+>>>>>>> c5a7103edd3c4183c960dd7eff16bd0b1f70e124
 });
 
 /* After OAuth routes to the main page */
@@ -130,6 +138,7 @@ router.post('/dashboard', (req, res) => {
 /* POST route for video file up to youtube*/
 router.post('/upload-youtube', (req, res) => {
 
+<<<<<<< HEAD
     console.log('file name: ',videoInfo.videoFilePath)
     youtubeUpload.runUpload( videoInfo )
 
@@ -138,6 +147,11 @@ router.post('/upload-youtube', (req, res) => {
 
 router.get('/upload-youtube', (req, res) => {
     res.send([videoInfo])
+=======
+    console.log('file name: ',videoInfo.fileName)
+    youtubeUpload.runUpload( videoInfo )
+    res.render('dashboard', { title: 'Youtube', display: "block", nav_items_show: "block", msg: "Uploaded", display_video: "block", videoSRC: videoInfo.fileName})
+>>>>>>> c5a7103edd3c4183c960dd7eff16bd0b1f70e124
 })
 
 module.exports = router;
