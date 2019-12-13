@@ -17,7 +17,7 @@ const youtube = google.youtube({
 
 // very basic example of uploading a video to youtube
 async function runUpload(videoInfo) {
-    const filePath = videoInfo.filePath
+    const filePath = videoInfo.videoFilePath
 
     const fileSize = fs.statSync( filePath ).size;
     const res = await youtube.videos.insert(

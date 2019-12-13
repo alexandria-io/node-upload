@@ -11,11 +11,8 @@ const youtube = google.youtube({
 
 async function runVideoAnalytics() {
     const res = await getVideoAnalytics(null)
-    // const etag = res.data.etag
-    // console.log(`etag: ${etag}`);
+    return res
 
-    // const res2 = await getVideoAnalytics(etag)
-    // console.log('res2 status: ', res2)
 }
 
 async function getVideoAnalytics(etag) {
@@ -24,16 +21,17 @@ async function getVideoAnalytics(etag) {
         headers['If-None-Match'] = etag
     }
 
-    const res = await youtube.videos.list({
-        part: 'id,snippet,statistics',
-        id: '2lAe1cqCOXo',
-        // chart: 'mostPopular',
-        // myRated: 'like',
+    const res = await youtube.channels.list({
+        part: 'snippet,contentDetails,statistics, contentDetails',
+        mine: true,
     });
+    
     console.log('Status code: ' + res.status);
-    console.log(res.data);
-    console.log(res.data.snippet)
-    return res;
+    const channel = res.data.items[0]
+    console.log(res.data)
+    
+    // console.log(res.data.items)
+    return channel;
 }
 
 module.exports = {

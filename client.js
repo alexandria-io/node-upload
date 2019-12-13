@@ -8,9 +8,10 @@ const destroyer = require('server-destroy');
 const fs = require('fs');
 const path = require('path');
 
-const keyPath = path.join(__dirname, 'oauth2.keys.json');
-// Back up keys incase you hit upload limit. 
-// const keyPath = path.join(__dirname, 'oauthTwo.keys.json');
+//bradvanderbush@gmail.com
+// const keyPath = path.join(__dirname, 'oauth2.keys.json');
+// Back up keys incase you hit upload limit jerrycurljackson@gmail.com
+const keyPath = path.join(__dirname, 'oauthTwo.keys.json');
 
 
 let keys = {
@@ -18,6 +19,7 @@ let keys = {
 };
 if (fs.existsSync(keyPath)) {
     const keyFile = require(keyPath);
+    // console.log(keyFile)
     keys = keyFile.installed || keyFile.web;
 }
 
@@ -77,6 +79,7 @@ class Client {
                             server.destroy();
                             const { tokens } = await this.oAuth2Client.getToken(qs.get('code'));
                             console.log(tokens)
+                           
                             this.oAuth2Client.credentials = tokens;
                             resolve(this.oAuth2Client);
                         }
@@ -89,6 +92,7 @@ class Client {
                     opn(this.authorizeUrl, { wait: false }).then(cp => cp.unref());
 
                 });
+                
             destroyer(server);
         });
     }
