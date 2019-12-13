@@ -45,14 +45,8 @@ body {
 }
 
 .show {
-<<<<<<< HEAD
   height: 0px;
   transition: height .6s ease-out;
-=======
-  height: 165px;
-  /* transition: height 1s ease-out; */
-  transition: all 1s ease-out;
->>>>>>> c5a7103edd3c4183c960dd7eff16bd0b1f70e124
 }
 
 .video-element {
@@ -63,20 +57,6 @@ body {
 .analytics {
   margin-top: 50px;
 }
-<<<<<<< HEAD
-=======
-
-.collection {
-  width: 50%
-}
-
-.collection-item {
-  list-style: none;
-  border-bottom: 1px solid #cecece;
-  padding: 15px 0 2px 2px;
-}
-
->>>>>>> c5a7103edd3c4183c960dd7eff16bd0b1f70e124
 
 .collection {
   width: 50%
